@@ -1,0 +1,42 @@
+# Don't track content of these folders
+img/
+image/
+images/
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.pkg
+*.exe
+*.msi
+*.swp
+*.iml
+
+
+# Android Studio Defaults #
+###########################
+# default gitignore created by it
+PlantHawaii/*.iml
+PlantHawaii/.gradle
+PlantHawaii/local.properties
+PlantHawaii/.idea/workspace.xml
+PlantHawaii/.idea/libraries
+PlantHawaii/.DS_Store
+PlantHawaii//build
+PlantHawaii/captures
+PlantHawaii/.externalNativeBuild
+
+
