@@ -49,6 +49,7 @@ CREATE TABLE USER (
 CREATE TABLE ISLAND (
     ID INT NOT NULL UNIQUE IDENTITY(1,1),
     NAME CHAR(8),
+    NICKNAME CHAR(19),
         CONSTRAINT PK_ISLAND_ID PRIMARY KEY(ID)
 );
 ------------------------------------------------------------------------------------------------------------------------------------------
