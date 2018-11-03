@@ -1,0 +1,16 @@
+This folder contains the Insert Statements for putting data into the DrinkMap database.
+
+Data Insert Order:
+0 -> SPECIAL INSERTS FIRST -> IDENTITY_INSERT
+1 -> ORDER
+2 -> COMMON_NAME
+3 -> HAWAIIAN_NAME
+4 -> NATIVE_STATUS
+5 -> INVASIVE_STATUS
+6 -> FEDERAL_STATUS
+7 -> USER
+8 -> ISLAND
+9 -> GENUS
+10 -> SUBMISSION
+11 -> GEOLOCATION
+12 -> SPECIES
