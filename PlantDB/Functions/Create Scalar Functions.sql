@@ -57,7 +57,7 @@ RETURNS INT
 AS
 BEGIN
 	DECLARE @ret INT
-	SET @ret = (SELECT ID FROM GENUS WHERE NAME = @INVASIVE_STATUS_STATUS);
+	SET @ret = (SELECT ID FROM INVASIVE_STATUS WHERE NAME = @INVASIVE_STATUS_STATUS);
 	IF (@ret IS NULL)
 		SET @ret = 0;
 	RETURN @ret;
@@ -70,7 +70,7 @@ RETURNS INT
 AS
 BEGIN
 	DECLARE @ret INT
-	SET @ret = (SELECT ID FROM GENUS WHERE NAME = @FEDERAL_STATUS_CODE);
+	SET @ret = (SELECT ID FROM FEDERAL_STATUS WHERE NAME = @FEDERAL_STATUS_CODE);
 	IF (@ret IS NULL)
 		SET @ret = 0;
 	RETURN @ret;
@@ -96,7 +96,7 @@ RETURNS INT
 AS
 BEGIN
 	DECLARE @ret INT
-	SET @ret = (SELECT ID FROM GENUS WHERE NAME = @USER_NAME);
+	SET @ret = (SELECT ID FROM USER WHERE NAME = @USER_NAME);
 	IF (@ret IS NULL)
 		SET @ret = 0;
 	RETURN @ret;
@@ -109,16 +109,28 @@ RETURNS INT
 AS
 BEGIN
 	DECLARE @ret INT
-	SET @ret = (SELECT ID FROM GENUS WHERE NAME = @ISLAND_NAME);
+	SET @ret = (SELECT ID FROM ISLAND WHERE NAME = @ISLAND_NAME);
 	IF (@ret IS NULL)
 		SET @ret = 0;
 	RETURN @ret;
 END;
 GO
-
 ------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------FIND Species ID FROM NAME and subspecies name
+CREATE FUNCTION FUNCTION_SPECIES_ID(@SPECIES_NAME VARCHAR(MAX), @SUBSPECIES_NAME VARCHAR(MAX))
+RETURNS INT
+AS
+BEGIN
+	DECLARE @ret INT
+	SET @ret = (SELECT ID FROM SPECIES WHERE SPECIES_NAME = @SPECIES_NAME AND SUBSPECIES_NAME = @SUBSPECIES_NAME);
+	IF (@ret IS NULL)
+		SET @ret = 0;
+	RETURN @ret;
+END;
+GO
+------------------------------------------------------------------------------------------------------------------------------------------
+
 /*
- get species name id function
  get submission id function
  GEOLOCATION ID??????????????
 */
