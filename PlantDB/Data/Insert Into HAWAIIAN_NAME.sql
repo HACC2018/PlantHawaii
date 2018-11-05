@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------------------
-INSERT INTO HAWAIIAN_NAME(NAME) VALUES('?ihi?ihi');
+INSERT INTO HAWAIIAN_NAME(NAME) VALUES('ʻihiʻihi');
 INSERT INTO HAWAIIAN_NAME(NAME) VALUES('Aloalo');
 INSERT INTO HAWAIIAN_NAME(NAME) VALUES('Waimeae');
 INSERT INTO HAWAIIAN_NAME(NAME) VALUES('Aikanene');
