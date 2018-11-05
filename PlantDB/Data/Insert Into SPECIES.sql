@@ -57,7 +57,9 @@ INSERT INTO SPECIES(NAME, SUBSPECIES_NAME, DESCRIPTION, STORY, GENUS_ID, COMMON_
 INSERT INTO SPECIES(NAME, SUBSPECIES_NAME, DESCRIPTION, STORY, GENUS_ID, COMMON_NAME_ID, HAWAIIAN_NAME_ID, NATIVE_STATUS_ID, INVASIVE_STATUS_ID, FEDERAL_STATUS_ID)
 	VALUES('indica', NULL,
 		'It is poisonous',
-		'XXXXXXXXXXXXXX',
+		'Early Use: Pounded stems and roots were applied externally to wounds, aches, bruises and broken bones
+
+Modern Use: Still used as a folk medicine',
 		FUNCTION_GENUS_ID('Ipomea'),
 		FUNCTION_COMMON_NAME_ID('Oceanblue Morning Glory'),
 		FUNCTION_HAWAIIAN_NAME_ID('Koali awa'),
@@ -112,7 +114,9 @@ INSERT INTO SPECIES(NAME, SUBSPECIES_NAME, DESCRIPTION, STORY, GENUS_ID, COMMON_
 INSERT INTO SPECIES(NAME, SUBSPECIES_NAME, DESCRIPTION, STORY, GENUS_ID, COMMON_NAME_ID, HAWAIIAN_NAME_ID, NATIVE_STATUS_ID, INVASIVE_STATUS_ID, FEDERAL_STATUS_ID)
 	VALUES('glauca', NULL,
 		'Hawaiian poppy is non-woody, herbaceous, and tends to clump. It can grow to over 3 ft high, and 2 to 4 ft wide, oer more. Green to gray leaves with yellowish prickles, and white and yellow flowers.',
-		'XXXXXXXXXXXXXX',
+		'Early Use: Bright yellow sap and seeds were used to treat toothache and nerve pain.
+
+Modern Use: Used in cow pastures to form beautiful and natural border hedges (many creatures won''t eat pua kala)',
 		FUNCTION_GENUS_ID('Argemone'),
 		FUNCTION_COMMON_NAME_ID('N/A'),
 		FUNCTION_HAWAIIAN_NAME_ID('Pua Kala'),
@@ -123,13 +127,13 @@ INSERT INTO SPECIES(NAME, SUBSPECIES_NAME, DESCRIPTION, STORY, GENUS_ID, COMMON_
 INSERT INTO SPECIES(NAME, SUBSPECIES_NAME, DESCRIPTION, STORY, GENUS_ID, COMMON_NAME_ID, HAWAIIAN_NAME_ID, NATIVE_STATUS_ID, INVASIVE_STATUS_ID, FEDERAL_STATUS_ID)
 	VALUES('populnea', NULL,
 		'A fast growing, small tree or a large shrub.  It generally reaches a height of 30 feet with a spread of 12 feet.',
-		'XXXXXXXXXXXXXX',
+		'Early Use: Was used to make cordage, dye, lei, and house furnishings (food bowels, platters and dishes). Was considered a sacred tree, and young milo leaves and flowers were edible',
 		FUNCTION_GENUS_ID('Thespesia'),
 		FUNCTION_COMMON_NAME_ID('Indian Tulip Tree'),
 		FUNCTION_HAWAIIAN_NAME_ID('Milo'),
-		FUNCTION_NATIVE_STATUS_ID(XXXXXXXXXXXXXX),
+		FUNCTION_NATIVE_STATUS_ID('Native'),
 		FUNCTION_INVASIVE_STATUS_ID('Non Invasive'),
-		FUNCTION_FEDERAL_STATUS_ID(XXXXXXXXXXXXXX)
+		FUNCTION_FEDERAL_STATUS_ID('N/A')
 	);
 INSERT INTO SPECIES(NAME, SUBSPECIES_NAME, DESCRIPTION, STORY, GENUS_ID, COMMON_NAME_ID, HAWAIIAN_NAME_ID, NATIVE_STATUS_ID, INVASIVE_STATUS_ID, FEDERAL_STATUS_ID)
 	VALUES('octovalvis', NULL,
@@ -138,8 +142,8 @@ INSERT INTO SPECIES(NAME, SUBSPECIES_NAME, DESCRIPTION, STORY, GENUS_ID, COMMON_
 		FUNCTION_GENUS_ID('Ludwigia'),
 		FUNCTION_COMMON_NAME_ID('Mexian Primrose Willow'),
 		FUNCTION_HAWAIIAN_NAME_ID('N/A'),
-		FUNCTION_NATIVE_STATUS_ID(XXXXXXXXXXXXXX),
+		FUNCTION_NATIVE_STATUS_ID('Native'),
 		FUNCTION_INVASIVE_STATUS_ID('Non Invasive'),
-		FUNCTION_FEDERAL_STATUS_ID(XXXXXXXXXXXXXX)
+		FUNCTION_FEDERAL_STATUS_ID('N/A')
 	);
 -------------------------------------------------------------------------------------------
