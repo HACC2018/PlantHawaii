@@ -80,7 +80,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="197" />
     <option name="y" value="500" />
     <option name="width" value="1400" />
@@ -232,7 +232,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="197" y="500" width="1400" height="1040" extended-state="1" />
+    <frame x="197" y="500" width="1400" height="1040" extended-state="0" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Palette&#9;" />

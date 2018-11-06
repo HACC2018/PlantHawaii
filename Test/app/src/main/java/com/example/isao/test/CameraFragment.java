@@ -1,0 +1,205 @@
+package com.example.isao.test;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.io.File;
+import io.fotoapparat.Fotoapparat;
+import io.fotoapparat.configuration.CameraConfiguration;
+import io.fotoapparat.error.CameraErrorListener;
+import io.fotoapparat.exception.camera.CameraException;
+import io.fotoapparat.parameter.ScaleType;
+import io.fotoapparat.preview.Frame;
+import io.fotoapparat.preview.FrameProcessor;
+import io.fotoapparat.result.BitmapPhoto;
+import io.fotoapparat.result.PhotoResult;
+import io.fotoapparat.result.WhenDoneListener;
+import io.fotoapparat.selector.FocusModeSelectorsKt;
+import io.fotoapparat.selector.SelectorsKt;
+import io.fotoapparat.view.CameraView;
+import io.fotoapparat.view.FocusView;
+
+import static io.fotoapparat.log.LoggersKt.fileLogger;
+import static io.fotoapparat.log.LoggersKt.logcat;
+import static io.fotoapparat.log.LoggersKt.loggers;
+import static io.fotoapparat.result.transformer.ResolutionTransformersKt.scaled;
+import static io.fotoapparat.selector.AspectRatioSelectorsKt.standardRatio;
+import static io.fotoapparat.selector.FlashSelectorsKt.autoFlash;
+import static io.fotoapparat.selector.FlashSelectorsKt.autoRedEye;
+import static io.fotoapparat.selector.FlashSelectorsKt.off;
+import static io.fotoapparat.selector.FlashSelectorsKt.torch;
+import static io.fotoapparat.selector.FocusModeSelectorsKt.autoFocus;
+import static io.fotoapparat.selector.FocusModeSelectorsKt.continuousFocusPicture;
+import static io.fotoapparat.selector.FocusModeSelectorsKt.fixed;
+import static io.fotoapparat.selector.LensPositionSelectorsKt.back;
+import static io.fotoapparat.selector.PreviewFpsRangeSelectorsKt.highestFps;
+import static io.fotoapparat.selector.ResolutionSelectorsKt.highestResolution;
+import static io.fotoapparat.selector.SelectorsKt.firstAvailable;
+import static io.fotoapparat.selector.SensorSensitivitySelectorsKt.highestSensorSensitivity;
+import java.lang.String;
+public class CameraFragment extends Fragment  implements View.OnClickListener{
+    private static final String LOGGING_TAG = "Fotoapparat Example";
+    private View rootView;
+   // private final PermissionsDelegate permissionsDelegate = new PermissionsDelegate(this);
+    private boolean hasCameraPermission;
+    private CameraView cameraView;
+    private FocusView focusView;
+    private View capture;
+
+    private Fotoapparat fotoapparat;
+Button btn;
+    boolean activeCameraBack = true;
+
+    private CameraConfiguration cameraConfiguration = CameraConfiguration
+            .builder()
+            .photoResolution(standardRatio(
+                    highestResolution()
+            ))
+            .focusMode(firstAvailable(
+                    continuousFocusPicture(),
+                    autoFocus(),
+                    fixed()
+            ))
+            .flash(firstAvailable(
+                    autoRedEye(),
+                    autoFlash(),
+                    torch(),
+                    off()
+            ))
+            .previewFpsRange(highestFps())
+            .sensorSensitivity(highestSensorSensitivity())
+            .frameProcessor(new SampleFrameProcessor())
+            .build();
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        rootView =  inflater.inflate(R.layout.content_camera, container, false);
+        btn = (Button) rootView.findViewById(R.id.captureButton);
+        btn.setOnClickListener(this);
+        cameraView = rootView.findViewById(R.id.cameraView);
+//        cameraView.setVisibility(rootView.VISIBLE);
+        fotoapparat = createFotoapparat();
+        // if (hasCameraPermission) {
+
+       // capture = inflater.inflate(R.layout.content_camera, container, false);
+    //    Button btn = (Button) rootView.findViewById(R.id.myButton);
+return rootView;
+    }
+
+    @Override
+    public void onStart() {
+
+        super.onStart();
+        System.out.println("activiated on start in camera frag");
+        fotoapparat.start();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+
+
+
+           // cameraView.setvi
+        //} else {
+            //request permission
+            //permissionsDelegate.requestCameraPermission();
+       // }
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.captureButton:
+                System.out.println("take picture heresdf");
+                Log.e(LOGGING_TAG, "onclick when pressing buttonsdf");
+                takePicture();
+                break;
+            default:
+                break;
+        }
+
+    }
+
+    private class SampleFrameProcessor implements FrameProcessor {
+        @Override
+        public void process(@NotNull Frame frame) {
+
+        }
+    }
+
+   /* private void takePictureOnClick() {
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                takePicture();
+                System.out.println("take picture here");
+                Log.e(LOGGING_TAG, "onclick when pressing button");
+            }
+        });
+    }
+*/
+    private void takePicture() {
+        System.out.println("takepicture called");
+        Log.e(LOGGING_TAG, "onclick take picture called");
+        PhotoResult photoResult = fotoapparat.takePicture();
+// Asynchronously saves photo to file
+   /*    photoResult.saveToFile(new File(
+                ("\\Internal Storage\\DCIM\\Camera"),
+                "photo.jpg"
+        ));
+       */
+
+       // photoResult.saveToFile(new File(
+             //   getContext().getDir("PlantHawaii",0),
+              //  "photo.jpg"
+    //    ));
+                photoResult.saveToFile(new File(
+                        getContext().getExternalFilesDir("photos"),
+                        "photo.jpg"
+                ));
+        photoResult
+                .toBitmap(scaled(0.25f))
+                .whenDone(new WhenDoneListener<BitmapPhoto>() {
+                    @Override
+                    public void whenDone(@Nullable BitmapPhoto bitmapPhoto) {
+                        if (bitmapPhoto == null) {
+                            Log.e(LOGGING_TAG, "Couldn't capture photo.");
+                            return;
+                        }
+                        //ImageView imageView = findViewById(R.id.result);
+
+                       // imageView.setImageBitmap(bitmapPhoto.bitmap);
+                        //imageView.setRotation(-bitmapPhoto.rotationDegrees);
+                    }
+                });
+    }
+
+    private Fotoapparat createFotoapparat() {
+        return Fotoapparat
+                .with(getActivity())
+                .into(cameraView)
+                .previewScaleType(ScaleType.CenterCrop)
+                .lensPosition(back())
+                .focusMode(SelectorsKt.firstAvailable(  // (optional) use the first focus mode which is supported by device
+                        FocusModeSelectorsKt. continuousFocusPicture(),
+                        FocusModeSelectorsKt.autoFocus(),        // in case if continuous focus is not available on device, auto focus will be used
+                        FocusModeSelectorsKt.fixed()             // if even auto focus is not available - fixed focus mode will be used
+                ))
+                .build();
+    }
+
+}
