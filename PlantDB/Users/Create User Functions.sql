@@ -3,19 +3,9 @@ CREATE FUNCTION FUNCTION_USER_CREATE(@USERNAME CHAR(255), @PASSWORD VARCHAR(MAX)
 RETURNS INT
 AS
 BEGIN
-    DECLARE @success AS INT
-    SET @success = 0;
-
-    BEGIN TRY
-        INSERT INTO USER(USERNAME, EMAIL, PASSWORD)
-            VALUES(@USERNAME, @EMAIL, HASHBYTES('SHA2_512', CAST(@PASSWORD AS NVARCHAR(4000))))
-        SET @success = 1;
-    END TRY
-    BEGIN CATCH
-        SET @success = 0;
-    END CATCH
-
-    RETURN @success;
+    INSERT INTO USER(USERNAME, EMAIL, PASSWORD)
+		VALUES(@USERNAME, @EMAIL, HASHBYTES('SHA2_512', CAST(@PASSWORD AS NVARCHAR(4000))))
+	RETURN 1;
 END;
 GO
 ------------------------------------------------------------------------------------------------------------------------------------------
