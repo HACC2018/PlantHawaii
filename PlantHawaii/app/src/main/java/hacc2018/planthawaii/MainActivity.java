@@ -1,10 +1,10 @@
 package hacc2018.planthawaii;
 
+
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -13,16 +13,23 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+import io.fotoapparat.Fotoapparat;
+import io.fotoapparat.view.CameraView;
 
+public class MainActivity extends AppCompatActivity
+
+        implements NavigationView.OnNavigationItemSelectedListener {
+    CameraView cameraView;
+    Fotoapparat fotoapparat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //   cameraView = findViewById(R.id.camera_view);
+        // fotoapparat= createFotoapparat(); //creates for camera
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+/*for email floating
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,7 +38,7 @@ public class MainActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
-
+*/
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -68,6 +75,13 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            // Intent menuIntent = new Intent(this, CameraActivity.class);
+            //   startActivity(menuIntent);
+            Fragment mFragment = null;
+            mFragment = new CameraFragment();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.fragmentFrame, mFragment).commit();
             return true;
         }
 
@@ -80,17 +94,23 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.flower1) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+            setContentView(R.layout.content_camera);
+        } else if (id == R.id.flower2) {/*
+            Fragment mFragment = null;
+            mFragment = new DownloadDBFragment();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.fragmentFrame, mFragment).commit();*/
+            return true;
+        } else if (id == R.id.flower3) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.flower4) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.plant1) {
 
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.plant2) {
 
         }
 
@@ -98,4 +118,12 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+    @Override
+    public void onStart() {
+
+        super.onStart();
+        //  fotoapparat.start();
+
+    }
+
 }
