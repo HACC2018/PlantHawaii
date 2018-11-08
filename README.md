@@ -26,6 +26,7 @@ Our team learned a lot about collaborative programming.  From communicating over
 ## What's next for Plant Hawaii
 We will implement the full database, with all 1400 Hawaiian plants and we will also retrain the plants that were not already there and they can adapt to the new species that get added. We will fully implement crowdsourcing, in which users can send in reports to other users who can verify that it is correct. The pictures that they submit will help to train machine learning. We also will design the GUI to include logins for users and admin users. We will geolocate pictures as they are taken and the geotagged pictures will be sent to DLNR when the user gets internet connectivity. We designed this with the idea in mind that the user will have limited internet access as they are in remote locations using the application in their work. 
 
+Devpost Link: https://devpost.com/software/plant-hawaii-7vpmz6
 Git Repository Link: https://github.com/HACC2018/PlantHawaii
 Mockup Link: https://projects.invisionapp.com/share/Q8OXMWDDHSG#/329364382
 Video Demo: https://youtu.be/RjOcw-n8cDk
