@@ -1,5 +1,5 @@
 -----------------------------------------------------------------------------
----------Need to insert Hawaiian Island ID?--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------Need to insert Hawaiian Island ID?----------------------------------
 INSERT INTO SPECIES(SPECIES_NAME, SUBSPECIES_NAME, [DESCRIPTION], STORY, GENUS_ID, COMMON_NAME_ID, HAWAIIAN_NAME_ID, NATIVE_STATUS_ID, INVASIVE_STATUS_ID, FEDERAL_STATUS_ID)
 	VALUES('villosa', 'N/A',
 		'This water loving fern can be used in and around ponds and other water features',

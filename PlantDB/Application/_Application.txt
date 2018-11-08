@@ -1,0 +1,1 @@
+This folder contains the application roles and permissions as well as creating the users for it.

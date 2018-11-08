@@ -1,8 +1,0 @@
-JDBC Connection String:
-
-jdbc:sqlserver://planthawaii.database.windows.net:1433;database=Plant Hawaii;user=shadowbomb@planthawaii;password={your_password_here};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
-
-
-SSMS Details:
-planthawaii.database.windows.net
-Login: Sql with authentication

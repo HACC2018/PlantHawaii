@@ -4,7 +4,7 @@
 --SCHEMA
 -----------------------------------------------------------------------------
 --PROCEDURES -> USER
-GRANT EXECUTE ON PROCEDURE_USER_CREATE TO application_users;
+GRANT EXECUTE ON [dbo].PROCEDURE_USER_CREATE TO application_users;
 -----------------------------------------------------------------------------
 --FUNCTIONS -> USER
 GRANT EXECUTE ON FUNCTION_USER_LOGIN TO application_users;
@@ -21,13 +21,17 @@ GRANT EXECUTE ON FUNCTION_ISLAND_ID TO application_users;
 GRANT EXECUTE ON FUNCTION_SPECIES_ID TO application_users;
 -----------------------------------------------------------------------------
 --FUNCTIONS -> TABLE VALUED
-GRANT EXECUTE ON FUNCTION_SPECIES_TABLE TO application_users;
-GRANT EXECUTE ON FUNCTION_SPECIES_ENTRY TO application_users;
+GRANT SELECT ON FUNCTION_SPECIES_TABLE TO application_users;
+GRANT SELECT ON FUNCTION_SPECIES_ENTRY TO application_users;
+GRANT SELECT ON FUNCTION_RANDOM_PLANT TO application_users;
+-----------------------------------------------------------------------------
+--PROCEDURES
+GRANT EXECUTE ON PROCEDURE_CREATE_SUBMISSION TO application_users;
 -----------------------------------------------------------------------------
 --TABLES SELECT
 GRANT SELECT ON SPECIES TO application_users;
 GRANT SELECT ON GENUS TO application_users;
-GRANT SELECT ON ORDER TO application_users;
+GRANT SELECT ON [ORDER] TO application_users;
 GRANT SELECT ON COMMON_NAME TO application_users;
 GRANT SELECT ON HAWAIIAN_NAME TO application_users;
 GRANT SELECT ON NATIVE_STATUS TO application_users;
@@ -35,9 +39,9 @@ GRANT SELECT ON INVASIVE_STATUS TO application_users;
 GRANT SELECT ON FEDERAL_STATUS TO application_users;
 GRANT SELECT ON ISLAND TO application_users;
 -----------------------------------------------------------------------------
---TABLES INSERT
-GRANT INSERT ON SUBMISSION TO application_users;
-GRANT INSERT ON GEOLOCATION TO application_users;
+--TABLES INSERT  <- REPLACED WITH PROCEDURE!
+--GRANT INSERT ON SUBMISSION TO application_users;
+--GRANT INSERT ON GEOLOCATION TO application_users;
 -----------------------------------------------------------------------------
 --TABLES UPDATE
 -----------------------------------------------------------------------------
