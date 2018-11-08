@@ -1,0 +1,1 @@
+This contains the procedures generated for working with data.  Safer alternative than hacing user get direct table priviledges.

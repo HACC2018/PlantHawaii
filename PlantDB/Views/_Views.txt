@@ -1,0 +1,1 @@
+This folder contains the views used by the database for navigation and other things.

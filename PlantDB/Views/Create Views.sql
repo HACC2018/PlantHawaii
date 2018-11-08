@@ -1,3 +1,6 @@
 -----------------------------------------------------------------------------
-DROP FUNCTION FUNCTION_USER_LOGIN;
+CREATE VIEW RANDOMNUMBER
+AS
+    SELECT RAND() AS RandomNumber;
+GO
 -----------------------------------------------------------------------------

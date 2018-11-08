@@ -1,3 +1,4 @@
 -----------------------------------------------------------------------------
-DROP FUNCTION FUNCTION_USER_LOGIN;
+CREATE ROLE application_users;
+ALTER ROLE application_users ADD MEMBER application;
 -----------------------------------------------------------------------------
