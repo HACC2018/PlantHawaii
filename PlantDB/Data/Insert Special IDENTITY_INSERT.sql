@@ -36,6 +36,6 @@ INSERT INTO GENUS(ID, [NAME], ORDER_ID) VALUES(0, 'N/A', 0)
 SET IDENTITY_INSERT [dbo].GENUS OFF;
 ------------------------------------------------------------------------------------------------------------------------------------------
 SET IDENTITY_INSERT [dbo].SPECIES ON;
-INSERT INTO SPECIES(ID, SPECIES_NAME, SUBSPECIES_NAME, [DESCRIPTION], STORY, GENUS_ID, COMMON_NAME_ID, HAWAIIAN_NAME_ID, NATIVE_STATUS_ID, INVASIVE_STATUS_ID, FEDERAL_STATUS_ID) VALUES(0, 'N/A', 'N/A', 'No description, blank.', 'No story, blank.', 0, 0, 0, 0, 0, 0)
+INSERT INTO SPECIES(ID, SPECIES_NAME, SUBSPECIES_NAME, [DESCRIPTION], STORY, GENUS_ID, COMMON_NAME_ID, HAWAIIAN_NAME_ID, NATIVE_STATUS_ID, INVASIVE_STATUS_ID, FEDERAL_STATUS_ID) VALUES(0, 'N/A', 'N/A', 'N/A', 'N/A', 0, 0, 0, 0, 0, 0)
 SET IDENTITY_INSERT [dbo].SPECIES OFF;
 ------------------------------------------------------------------------------------------------------------------------------------------
