@@ -1,4 +1,4 @@
-package hacc2018.planthawaii1
+package hacc2018.planthawaii
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar

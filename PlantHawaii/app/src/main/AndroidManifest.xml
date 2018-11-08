@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="hacc2018.planthawaii1">
+          package="hacc2018.planthawaii">
 
     <application
             android:allowBackup="true"

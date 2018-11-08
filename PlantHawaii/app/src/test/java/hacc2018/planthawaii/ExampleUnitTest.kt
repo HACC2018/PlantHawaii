@@ -1,4 +1,4 @@
-package hacc2018.planthawaii1
+package hacc2018.planthawaii
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package hacc2018.planthawaii1
+package hacc2018.planthawaii
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("hacc2018.planthawaii1", appContext.packageName)
+        assertEquals("hacc2018.planthawaii", appContext.packageName)
     }
 }
