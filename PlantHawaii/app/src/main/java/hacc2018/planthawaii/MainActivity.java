@@ -1,6 +1,7 @@
 package hacc2018.planthawaii;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+
+import java.util.List;
+import java.util.Map;
 
 import io.fotoapparat.Fotoapparat;
 import io.fotoapparat.view.CameraView;
@@ -21,10 +27,27 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     CameraView cameraView;
     Fotoapparat fotoapparat;
+    ListView LV_Country;
+    SimpleAdapter ADAhere;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        System.out.println("create the oncreate tired");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//database connection
+        List<Map<String,String>> MyData = null;
+        GetData mydata =new GetData();
+        MyData= mydata.doInBackground();
+        //String[] fromwhere = { "ID","Country","Capital" };
+
+        //int[] viewswhere = {R.id.lblID , R.id.lblcountryname,R.id.lblCapitalCity};
+
+        //ADAhere = new SimpleAdapter(MainActivity.this, MyData,R.layout.listtemplate, fromwhere, viewswhere);
+
+       // LV_Country.setAdapter(ADAhere);
+
+
         //   cameraView = findViewById(R.id.camera_view);
         // fotoapparat= createFotoapparat(); //creates for camera
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -105,6 +128,11 @@ public class MainActivity extends AppCompatActivity
                     .replace(R.id.fragmentFrame, mFragment).commit();*/
             return true;
         } else if (id == R.id.flower3) {
+            Intent intent = new Intent(this, MainActivity2.class);
+         //   EditText editText = (EditText) findViewById(R.id.editText);
+           // String message = editText.getText().toString();
+           // intent.putExtra(EXTRA_MESSAGE, message);
+            startActivity(intent);
 
         } else if (id == R.id.flower4) {
 
