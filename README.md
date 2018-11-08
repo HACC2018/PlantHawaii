@@ -29,3 +29,4 @@ We will implement the full database, with all 1400 Hawaiian plants and we will a
 Git Repository Link: https://github.com/HACC2018/PlantHawaii
 Mockup Link: https://projects.invisionapp.com/share/Q8OXMWDDHSG#/329364382
 Video Demo: https://youtu.be/RjOcw-n8cDk
+LucidChart ERD: https://www.lucidchart.com/invitations/accept/228d1d0d-1b51-4d89-91b0-46a8f261bc35
