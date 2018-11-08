@@ -1,7 +1,7 @@
 package hacc2018.planthawaii;
 
 
-import android.graphics.Bitmap;
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.Fragment;
@@ -16,9 +16,12 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
+import hacc2018.planthawaii.models.Classifier;
 import io.fotoapparat.Fotoapparat;
 import io.fotoapparat.configuration.CameraConfiguration;
 import io.fotoapparat.parameter.ScaleType;
@@ -46,6 +49,7 @@ import static io.fotoapparat.selector.PreviewFpsRangeSelectorsKt.highestFps;
 import static io.fotoapparat.selector.ResolutionSelectorsKt.highestResolution;
 import static io.fotoapparat.selector.SelectorsKt.firstAvailable;
 import static io.fotoapparat.selector.SensorSensitivitySelectorsKt.highestSensorSensitivity;
+
 public class CameraFragment extends Fragment  implements View.OnClickListener{
     private static final String LOGGING_TAG = "Fotoapparat Example";
     private View rootView;
@@ -58,6 +62,12 @@ public class CameraFragment extends Fragment  implements View.OnClickListener{
     private Fotoapparat fotoapparat;
     Button btn;
     boolean activeCameraBack = true;
+
+    private List<Classifier> mClassifiers = new ArrayList<>();
+    private static final int PIXEL_WIDTH = 224;
+    //private CameraFragment mContext;
+    private static Context thisContext;
+    //private Context mContext;
 
     private CameraConfiguration cameraConfiguration = CameraConfiguration
             .builder()
@@ -83,7 +93,10 @@ public class CameraFragment extends Fragment  implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //mContext = this;
+
         // Inflate the layout for this fragment
+
         rootView =  inflater.inflate(R.layout.content_camera, container, false);
 
         btn = (Button) rootView.findViewById(R.id.captureButton);
@@ -211,5 +224,30 @@ public class CameraFragment extends Fragment  implements View.OnClickListener{
                 ))
                 .build();
     }
+
+
+
+
+
+/*
+    private void loadModel() {
+        //The Runnable interface is another way in which you can implement multi-threading other than extending the
+        // //Thread class due to the fact that Java allows you to extend only one class. Runnable is just an interface,
+        // //which provides the method run.
+        // //Threads are implementations and use Runnable to call the method run().
+
+        try {
+            //add 2 classifiers to our classifier arraylist
+            //the tensorflow classifier and the keras classifier
+            mClassifiers.add(
+                    TensorFlowClassifier.create(getActivity().getAssets(), "TensorFlow",
+                            "opt_MobileNet_optim.pb", "label.txt", PIXEL_WIDTH,
+                            "input", "output", true));
+        } catch (final Exception e) {
+            //if they aren't found, throw an error!
+            throw new RuntimeException("Error initializing classifiers!", e);
+        }
+    }
+*/
 
 }
