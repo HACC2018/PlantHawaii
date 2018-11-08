@@ -27,7 +27,7 @@ CREATE TABLE NATIVE_STATUS (
 ------------------------------------------------------------------------------------------------------------------------------------------
 CREATE TABLE INVASIVE_STATUS (
     ID INT NOT NULL UNIQUE IDENTITY(1,1),
-    [STATUS] CHAR(10) NOT NULL UNIQUE,
+    [STATUS] CHAR(12) NOT NULL UNIQUE,
         CONSTRAINT PK_INVASIVE_STATUS_ID PRIMARY KEY(ID)
 );
 ------------------------------------------------------------------------------------------------------------------------------------------
@@ -48,7 +48,7 @@ CREATE TABLE [USER] (
 ------------------------------------------------------------------------------------------------------------------------------------------
 CREATE TABLE ISLAND (
     ID INT NOT NULL UNIQUE IDENTITY(1,1),
-    [NAME] CHAR(8),
+    [NAME] CHAR(10) NOT NULL UNIQUE,
     NICKNAME CHAR(19),
         CONSTRAINT PK_ISLAND_ID PRIMARY KEY(ID)
 );
