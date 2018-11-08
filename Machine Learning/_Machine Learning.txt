@@ -1,0 +1,1 @@
+This folder contains all of the data mining, machine learning, and links to datasets used for PlantHawaii.

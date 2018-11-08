@@ -1,0 +1,1 @@
+This folder contains documents to create tables and to drop tables in the proper order.

@@ -1,0 +1,1 @@
+This folder contains all functions we will define on PlantDB as well as usage of them.

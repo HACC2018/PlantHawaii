@@ -1,0 +1,16 @@
+This folder contains the folders which have the database sorted into different sections of code to create and drop as well as populate it with data.
+
+This database was created in 2018 using SQL Server on the Microsoft Azure platform using T-SQL code and is not portable to other SQL flavors or systems.
+
+JDBC Connection String:
+jdbc:sqlserver://planthawaii.database.windows.net:1433;database=Plant Hawaii;user=shadowbomb@planthawaii;password={your_password_here};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+
+
+SSMS Details:
+planthawaii.database.windows.net:1433
+Login: Sql with authentication
+
+
+Application user login:
+username: Application
+password: P@s$W0rd1!
