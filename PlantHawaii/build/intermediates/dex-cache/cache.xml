@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\kekoa\Documents\GitHub\PlantHawaii\PlantHawaii\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c323c36ecc68965c4cfb460f7721113d2b61ed03">
+        <dex dex="C:\Users\kekoa\Documents\GitHub\PlantHawaii\PlantHawaii\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_d0c265a60799d512858fde606685dbef37ff9d09\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\kekoa\Documents\GitHub\PlantHawaii\PlantHawaii\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e204f5007e3b9a66d34898b41ac8ddf90eb885b9">
+        <dex dex="C:\Users\kekoa\Documents\GitHub\PlantHawaii\PlantHawaii\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_82059b3bd43adbcbcc047debbff276ae7f376aa1\classes.dex" />
+    </item>
+
+</items>
